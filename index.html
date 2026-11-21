@@ -292,47 +292,28 @@
                     <h3 class="text-2xl font-heading text-sage-dark mb-6">Schreib mir eine Nachricht</h3>
                     
                     <!-- Form Component -->
-                    <form id="contactForm" class="space-y-6">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Name *</label>
-                                <input type="text" id="name" name="name" required
-                                    class="w-full px-4 py-3 bg-sand/50 border border-gray-200 rounded-xl transition-all duration-200" placeholder="Dein vollständiger Name">
-                            </div>
-                            <div>
-                                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">E-Mail Adresse *</label>
-                                <input type="email" id="email" name="email" required
-                                    class="w-full px-4 py-3 bg-sand/50 border border-gray-200 rounded-xl transition-all duration-200" placeholder="deine@email.de">
-                            </div>
-                        </div>
-                        
-                        <div>
-                            <label for="et" class="block text-sm font-medium text-gray-700 mb-2">Errechneter Termin (ET) / Wohnort</label>
-                            <input type="text" id="et" name="et" 
-                                class="w-full px-4 py-3 bg-sand/50 border border-gray-200 rounded-xl transition-all duration-200" placeholder="z.B. 15.08.2024, Erfurt-Süd">
-                        </div>
+					<form action="https://formsubmit.co/info@mareile-busch-hebamme.de" method="POST" class="contact-form">
+						<!-- Spam-Schutz (Honeypot) - Für Bots unsichtbar -->
+						<input type="text" name="_honey" style="display:none">
+						
+						<!-- Eigener Betreff für die eingehenden E-Mails -->
+						<input type="hidden" name="_subject" value="Neue Anfrage über die Webseite">
+						
+						<!-- Optional: Weiterleitungsseite nach erfolgreichem Senden. 
+							 (Raute entfernen und URL anpassen, sobald die Git Page online ist) -->
+						<!-- <input type="hidden" name="_next" value="https://dein-github-name.github.io/danke.html"> -->
 
-                        <div>
-                            <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Deine Nachricht *</label>
-                            <textarea id="message" name="message" rows="4" required
-                                class="w-full px-4 py-3 bg-sand/50 border border-gray-200 rounded-xl resize-none transition-all duration-200" placeholder="Wie kann ich dir helfen?"></textarea>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="flex items-center h-5">
-                                <input id="datenschutz" name="datenschutz" type="checkbox" required class="w-4 h-4 text-sage border-gray-300 rounded focus:ring-sage">
-                            </div>
-                            <div class="ml-3 text-sm">
-                                <label for="datenschutz" class="text-gray-500">Ich habe die Datenschutzerklärung zur Kenntnis genommen und stimme zu, dass meine Angaben zur Kontaktaufnahme gespeichert werden. *</label>
-                            </div>
-                        </div>
+						<label for="name">Name</label>
+						<input type="text" id="name" name="name" required>
 
-                        <button type="submit" 
-                            class="w-full bg-sage hover:bg-sage-dark text-white font-semibold py-4 rounded-xl transition-all duration-300 shadow-md hover:shadow-lg flex justify-center items-center">
-                            <span>Nachricht senden</span>
-                            <i class="fas fa-paper-plane ml-2"></i>
-                        </button>
-                    </form>
+						<label for="email">E-Mail</label>
+						<input type="email" id="email" name="email" required>
+
+						<label for="message">Nachricht</label>
+						<textarea id="message" name="message" rows="5" required></textarea>
+
+						<button type="submit">Nachricht senden</button>
+					</form>
 
                     <!-- Success Message (Hidden by default) -->
                     <div id="successMessage" class="hidden mt-6 p-4 bg-green-50 border border-green-200 rounded-xl flex items-start">
@@ -359,7 +340,7 @@
                 <h4 class="text-white font-heading text-xl mb-4">Kontakt</h4>
                 <ul class="space-y-2 text-sm">
                     <li>Telefon: 0174 - 909 46 28</li>
-                    <li>E-Mail: hebamme-mareile@web.de</li>
+                    <li>E-Mail: info@mareile-busch-hebamme.de</li>
                 </ul>
             </div>
             <div>
